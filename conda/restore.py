@@ -6,8 +6,8 @@ def remove_conda_environment(env_name):
     try:
         subprocess.run(['conda', 'env', 'remove', '--name', env_name], check=True)
         print(f'The existing environment "{env_name}" has been successfully removed.')
-    except subprocess.CalledProcessError as e:
-        print(f'An error occurred while removing the environment "{env_name}": {str(e)}.')
+    except subprocess.CalledProcessError as error:
+        print(f'An error occurred while removing the environment "{env_name}": {str(error)}.')
 
 
 def restore_conda_environment(configuration_path):

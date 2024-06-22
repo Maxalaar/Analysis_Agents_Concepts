@@ -16,10 +16,10 @@ def save_conda_environment(path):
                     file.write(line)
 
         print('The prefix line has been successfully removed from ' + path + '.')
-    except subprocess.CalledProcessError as e:
-        print(f'An error occurred while saving the environment: {e}')
-    except Exception as e:
-        print(f'An unexpected error occurred: {e}')
+    except subprocess.CalledProcessError as error:
+        print(f'An error occurred while saving the environment: {error}')
+    except Exception as error:
+        print(f'An unexpected error occurred: {error}')
 
 
 if __name__ == '__main__':
