@@ -1,33 +1,19 @@
 import subprocess
-import os
 
-
-def remove_conda_environment(env_name):
-    try:
-        subprocess.run(['conda', 'env', 'remove', '--name', env_name], check=True)
-        print(f'The existing environment "{env_name}" has been successfully removed.')
-    except subprocess.CalledProcessError as error:
-        print(f'An error occurred while removing the environment "{env_name}": {str(error)}.')
+from utilities import get_environment_conda_name, remove_conda_environment
 
 
 def restore_conda_environment(configuration_path):
     try:
-        env_name = None
-        with open(configuration_path, 'r') as file:
-            for line in file:
-                if line.startswith('name:'):
-                    env_name = line.split(':')[1].strip()
-                    break
-
-        if env_name is not None:
-            remove_conda_environment(env_name)
+        environment_name = get_environment_conda_name
+        remove_conda_environment(environment_name)
 
         subprocess.run(['conda', 'env', 'create', '--file', configuration_path], check=True)
         print(f'The environment has been successfully restored from {configuration_path}.')
-    except subprocess.CalledProcessError as e:
-        print(f'An error occurred while restoring the environment: {str(e)}.')
-    except Exception as e:
-        print(f'An unexpected error occurred: {str(e)}')
+    except subprocess.CalledProcessError as error:
+        print(f'An error occurred while restoring the environment: {str(error)}.')
+    except Exception as error:
+        print(f'An unexpected error occurred: {str(error)}')
 
 
 if __name__ == '__main__':
