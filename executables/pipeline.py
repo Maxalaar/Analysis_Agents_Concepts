@@ -1,6 +1,7 @@
-from modules import supervised_learning
+from modules.learning_concept_observation_correspondence import learning_concept_observation_correspondence
 from utilities.path import PathManager
 from architectures.supervised.simple import Simple
+
 
 if __name__ == '__main__':
     experiment_name = 'debug'
@@ -8,14 +9,11 @@ if __name__ == '__main__':
 
     supervised_learning_architecture = Simple
 
-    supervised_learning.train(
-        experiment_name=path_manager.experiment_name,
-        data_path=path_manager.datasets_directory + '/latent_space_singular_basis.h5',
-        x_name='latent_space_singular_basis',
-        y_name='observation',
+    learning_concept_observation_correspondence(
+        path_manager=path_manager,
         architecture=supervised_learning_architecture,
-        save_path=path_manager.lightning_directory,
-        accelerator='gpu',
     )
+
+
 
     

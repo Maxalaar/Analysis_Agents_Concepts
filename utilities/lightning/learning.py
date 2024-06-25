@@ -1,19 +1,18 @@
-import argparse
 import pytorch_lightning as pl
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import ModelCheckpoint, EarlyStopping
 
 from utilities.data import DataModule
-from utilities.lightning_module import Supervised
+from utilities.lightning.module import Supervised
 
 
 def train(
-        experiment_name,
         data_path,
+        tensorboard_path,
+        model_path,
         x_name,
         y_name,
         architecture,
-        save_path,
         max_epochs=-1,
         max_model_save=3,
         save_interval=5,
@@ -26,11 +25,11 @@ def train(
     model_module = Supervised(model)
 
     logger = TensorBoardLogger(
-        save_dir=save_path + '/tensorboard/',
+        save_dir=tensorboard_path,
     )
     checkpoint_callback = ModelCheckpoint(
         monitor='validation_loss',
-        dirpath=save_path + '/model/',
+        dirpath=model_path,
         filename='model-{epoch:02d}-{val_loss:.2f}',
         save_top_k=max_model_save,
         mode='min',

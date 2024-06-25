@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add new conda features">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/architectures/supervised/simple.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/supervised_learning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/lightning_module.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
+    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add gitignore and supervised_learning">
+      <change afterPath="$PROJECT_DIR$/modules/learning_concept_observation_correspondence.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conda/configuration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conda/configuration.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conda/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/conda/install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/supervised_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/lightning_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +70,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/experimentations" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utilities/lightning" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pipeline">
@@ -244,9 +243,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.pipeline" />
+        <item itemvalue="Python.save" />
         <item itemvalue="Python.load_pytorch_lightning" />
         <item itemvalue="Python.train_pytorch_lightning" />
-        <item itemvalue="Python.save" />
         <item itemvalue="Python.pytorch_lightning_v1" />
       </list>
     </recent_temporary>
@@ -291,13 +290,22 @@
       <option name="project" value="LOCAL" />
       <updated>1719164154046</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add gitignore and supervised_learning">
+      <option name="closed" value="true" />
+      <created>1719325305137</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719325305137</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialisation conda environment" />
     <MESSAGE value="Add conda/install.py" />
     <MESSAGE value="Add new conda features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new conda features" />
+    <MESSAGE value="Add gitignore and supervised_learning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add gitignore and supervised_learning" />
   </component>
 </project>
