@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Reorganization of modules and utilities">
-      <change afterPath="$PROJECT_DIR$/modules/generation_obsertions_based_concepts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add load model and generation_observations_based_concepts.py">
+      <change afterPath="$PROJECT_DIR$/environments/environment_configurations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/environments/pong_survivor/ball.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/environments/pong_survivor/paddle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/environments/pong_survivor/render.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/environments/register_environments.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/dictionary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/architectures/supervised/simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/architectures/supervised/simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conda/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/conda/install.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/learning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/module.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/generation_observations_based_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_observations_based_concepts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,28 +56,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.install.executor&quot;: &quot;Run&quot;,
-    &quot;Python.load_pytorch_lightning.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pipeline.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pytorch_lightning_tune.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pytorch_lightning_v3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.reset.executor&quot;: &quot;Run&quot;,
-    &quot;Python.restore.executor&quot;: &quot;Run&quot;,
-    &quot;Python.restore_conda_environment.executor&quot;: &quot;Run&quot;,
-    &quot;Python.save.executor&quot;: &quot;Run&quot;,
-    &quot;Python.save_conda_environment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/malaarabiou/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts/experimentations&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.install.executor": "Run",
+    "Python.load_pytorch_lightning.executor": "Run",
+    "Python.pipeline.executor": "Run",
+    "Python.pytorch_lightning_tune.executor": "Run",
+    "Python.pytorch_lightning_v3.executor": "Run",
+    "Python.reset.executor": "Run",
+    "Python.restore.executor": "Run",
+    "Python.restore_conda_environment.executor": "Run",
+    "Python.save.executor": "Run",
+    "Python.save_conda_environment.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/malaarabiou/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts/utilities",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/experimentations" />
+      <recent name="$PROJECT_DIR$/utilities" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/experimentations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/experimentations" />
@@ -319,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719327655307</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add load model and generation_observations_based_concepts.py">
+      <option name="closed" value="true" />
+      <created>1719409328742</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719409328742</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -328,17 +342,25 @@
     <MESSAGE value="Add new conda features" />
     <MESSAGE value="Add gitignore and supervised_learning" />
     <MESSAGE value="Reorganization of modules and utilities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reorganization of modules and utilities" />
+    <MESSAGE value="Add load model and generation_observations_based_concepts.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add load model and generation_observations_based_concepts.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/modules/generation_obsertions_based_concepts.py</url>
+          <url>file://$PROJECT_DIR$/environments/pong_survivor/render.py</url>
           <line>12</line>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

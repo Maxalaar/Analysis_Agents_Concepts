@@ -8,13 +8,13 @@ class Simple(pl.LightningModule):
         super(Simple, self).__init__()
         self.input_dimension = input_dimension
         self.output_dimension = output_dimension
-        input_size = torch.prod(torch.tensor(self.input_dimension)).item()
-        output_size = torch.prod(torch.tensor(self.output_dimension)).item()
+        self.input_size = torch.prod(torch.tensor(self.input_dimension)).item()
+        self.output_size = torch.prod(torch.tensor(self.output_dimension)).item()
 
         self.flatten = nn.Flatten()
-        self.layer1 = nn.Linear(input_size, 128)
+        self.layer1 = nn.Linear(self.input_size, 128)
         self.layer2 = nn.Linear(128, 64)
-        self.layer3 = nn.Linear(64, output_size)
+        self.layer3 = nn.Linear(64, self.output_size)
 
     def forward(self, x):
         x = self.flatten(x)

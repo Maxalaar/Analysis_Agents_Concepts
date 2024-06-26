@@ -25,6 +25,7 @@ if __name__ == '__main__':
         "conda install conda-forge::pytorch-lightning --yes",
         "conda install h5py --yes",
         "conda install -c conda-forge tensorboard --yes",
+        "pip install pygame"
     ]
 
     # Execute conda commands
