@@ -1,8 +1,9 @@
+import pytorch_lightning as pl
 import torch
 import torch.nn as nn
 
 
-class Simple(nn.Module):
+class Simple(pl.LightningModule):
     def __init__(self, input_dimension, output_dimension):
         super(Simple, self).__init__()
         self.input_dimension = input_dimension

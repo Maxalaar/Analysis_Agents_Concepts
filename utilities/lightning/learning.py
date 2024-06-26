@@ -33,7 +33,6 @@ def train(
         filename='model-{epoch:02d}-{val_loss:.2f}',
         save_top_k=max_model_save,
         mode='min',
-        save_last=True,
         every_n_epochs=save_interval,
     )
     early_stop_callback = EarlyStopping(

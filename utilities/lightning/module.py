@@ -4,8 +4,12 @@ import torch.optim as optim
 
 
 class Supervised(pl.LightningModule):
-    def __init__(self, model):
+    def __init__(self, model=None):
         super(Supervised, self).__init__()
+        if model is not None:
+            self.save_hyperparameters('model')
+        else:
+            model = self.hparams['model']
         self.model = model
         self.criterion = nn.MSELoss()
 
