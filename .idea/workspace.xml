@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add load model and generation_observations_based_concepts.py">
-      <change afterPath="$PROJECT_DIR$/environments/environment_configurations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/environments/pong_survivor/ball.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/environments/pong_survivor/paddle.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/environments/pong_survivor/render.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/environments/register_environments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/dictionary.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/image.py" afterDir="false" />
+    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add environment and image generation">
+      <change afterPath="$PROJECT_DIR$/architectures/reinforcement/dense.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/architectures/reinforcement/register_architectures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/singular_value_decomposition_latent_spaces.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/architectures/supervised/simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/architectures/supervised/simple.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conda/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/conda/install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" beforeDir="false" afterPath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/generation_observations_based_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_observations_based_concepts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/learning_concept_observation_correspondence.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/learning_concept_observation_correspondence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/lightning/learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +60,7 @@
     "Python.install.executor": "Run",
     "Python.load_pytorch_lightning.executor": "Run",
     "Python.pipeline.executor": "Run",
+    "Python.prov.executor": "Debug",
     "Python.pytorch_lightning_tune.executor": "Run",
     "Python.pytorch_lightning_v3.executor": "Run",
     "Python.reset.executor": "Run",
@@ -70,20 +70,23 @@
     "Python.save_conda_environment.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/malaarabiou/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts/utilities",
+    "last_opened_file_path": "/home/malaarabiou/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts/architectures/reinforcement",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/architectures/reinforcement" />
       <recent name="$PROJECT_DIR$/utilities" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/experimentations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/experiments/debug_3/datasets" />
+      <recent name="$PROJECT_DIR$/utilities/ray" />
+      <recent name="$PROJECT_DIR$/utilities" />
       <recent name="$PROJECT_DIR$/experimentations" />
       <recent name="$PROJECT_DIR$/temporaries" />
-      <recent name="$PROJECT_DIR$/utilities/lightning" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pipeline">
@@ -154,7 +157,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytorch_lightning_v1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="prov" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Analysis_Agents_Concepts" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,11 +166,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experimentations" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/temporaries" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/experimentations/pytorch_lightning_v1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/prov.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -245,19 +248,19 @@
     <list>
       <item itemvalue="Python.reset" />
       <item itemvalue="Python.install" />
+      <item itemvalue="Python.prov" />
       <item itemvalue="Python.pipeline" />
       <item itemvalue="Python.load_pytorch_lightning" />
       <item itemvalue="Python.train_pytorch_lightning" />
-      <item itemvalue="Python.pytorch_lightning_v1" />
       <item itemvalue="Python.save" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.pipeline" />
+        <item itemvalue="Python.prov" />
         <item itemvalue="Python.save" />
         <item itemvalue="Python.load_pytorch_lightning" />
         <item itemvalue="Python.train_pytorch_lightning" />
-        <item itemvalue="Python.pytorch_lightning_v1" />
       </list>
     </recent_temporary>
   </component>
@@ -333,7 +336,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719409328742</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add environment and image generation">
+      <option name="closed" value="true" />
+      <created>1719414302219</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719414302219</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -343,7 +354,8 @@
     <MESSAGE value="Add gitignore and supervised_learning" />
     <MESSAGE value="Reorganization of modules and utilities" />
     <MESSAGE value="Add load model and generation_observations_based_concepts.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add load model and generation_observations_based_concepts.py" />
+    <MESSAGE value="Add environment and image generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add environment and image generation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

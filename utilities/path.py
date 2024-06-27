@@ -20,8 +20,10 @@ class PathManager:
         self.experiments_directory = os.path.join(self.execution_directory, 'experiments')
         self.experiment_directory = os.path.join(self.experiments_directory, self.experiment_name)
 
+        self.rllib_directory = os.path.join(self.experiment_directory, 'rllib')
+
         self.datasets_directory = os.path.join(self.experiment_directory, 'datasets')
-        self.latent_space_singular_basis = os.path.join(self.datasets_directory, 'latent_space_singular_basis.h5')
+        self.embeddings_dataset = os.path.join(self.datasets_directory, 'embeddings.h5')
 
         self.lightning_directory = os.path.join(self.experiment_directory, 'lightning')
         self.lightning_tensorboard_directory = os.path.join(self.lightning_directory, 'tensorboard')

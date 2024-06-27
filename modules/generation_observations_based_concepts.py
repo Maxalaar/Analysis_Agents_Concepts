@@ -1,8 +1,6 @@
 import os
 
 import torch
-import gymnasium
-from ray.rllib.env.env_context import EnvContext
 
 from utilities.path import PathManager
 from utilities.lightning.load import load
@@ -13,8 +11,7 @@ def generation_observations_based_concepts(path_manager: PathManager, environmen
     model_module = load(
         model_directory=path_manager.lightning_model_directory,
     )
-    # number_concepts = model_module.model.input_size
-    number_concepts = 10
+    number_concepts = model_module.model.input_size
 
     for concept_number in range(number_concepts):
         variation_concept = torch.zeros((number_elements_per_concept, number_concepts), dtype=torch.float32).to(model_module.device.type)
