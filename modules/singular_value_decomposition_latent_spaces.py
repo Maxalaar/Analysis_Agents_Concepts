@@ -35,7 +35,9 @@ def singular_value_decomposition_embeddings(path_manager: PathManager,  number_b
 
             return column
 
-        embeddings_singular_basis = embeddings_singular_basis.map_blocks(custom_scaling)
+        for column_index in range(embeddings_singular_basis.shape[1]):
+            embeddings_singular_basis[:, column_index] = custom_scaling(embeddings_singular_basis[:, column_index])
+
         embeddings_singular_basis = embeddings_singular_basis.compute()
 
         file['embeddings_singular_basis'] = embeddings_singular_basis

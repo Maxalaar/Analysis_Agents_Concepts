@@ -19,8 +19,9 @@ def train(
         patience=50,
         accelerator='cpu',
         devices='auto',
+        batch_size=32,
 ):
-    data_module = DataModule(data_path, x_name, y_name)
+    data_module = DataModule(data_path, x_name, y_name, batch_size=batch_size)
     model = architecture(data_module.x_shape, data_module.y_shape)
     model_module = Supervised(model)
 

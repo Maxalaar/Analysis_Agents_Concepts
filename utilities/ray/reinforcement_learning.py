@@ -62,7 +62,7 @@ def train(
             stop=stopping_criterion,
             checkpoint_config=air.CheckpointConfig(
                 num_to_keep=1,
-                checkpoint_score_attribute='episode_reward_mean',
+                checkpoint_score_attribute='env_runners/episode_reward_mean',
                 checkpoint_score_order='max',
                 checkpoint_frequency=checkpoint_frequency,
                 checkpoint_at_end=True,

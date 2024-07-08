@@ -11,4 +11,5 @@ def learning_concept_observation_correspondence(path_manager: PathManager, archi
         x_name='embeddings_singular_basis',
         y_name='observation',
         accelerator='gpu',
+        batch_size=64*64*64,
     )

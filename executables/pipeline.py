@@ -7,7 +7,7 @@ from modules.generation_observations_based_concepts import generation_observatio
 from modules.learning_concept_observation_correspondence import learning_concept_observation_correspondence
 from modules.singular_value_decomposition_latent_spaces import singular_value_decomposition_embeddings
 from utilities.path import PathManager
-from architectures.supervised.simple import Simple
+from architectures.supervised.dense import Dense
 import environments.environment_configurations as environment_configurations
 from environments.pong_survivor.pong_survivor import PongSurvivor
 
@@ -31,12 +31,12 @@ if __name__ == '__main__':
         'layers_use_clustering': [False, False, True, False, False],
     }
     stopping_criterion = {
-        'time_total_s': 60 * 60 * 1,
+        'time_total_s': 60 * 10,
         'env_runners/episode_reward_mean': 0.95,
     }
 
     # Supervised Learning
-    supervised_learning_architecture = Simple
+    supervised_learning_architecture = Dense
 
     # Run
     agent_training_by_reinforcement_learning(

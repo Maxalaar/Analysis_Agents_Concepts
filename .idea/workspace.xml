@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add environment and image generation">
-      <change afterPath="$PROJECT_DIR$/architectures/reinforcement/dense.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/architectures/reinforcement/register_architectures.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/singular_value_decomposition_latent_spaces.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" afterDir="false" />
+    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : reinforcement learning, Mod : pong_survivor">
+      <change afterPath="$PROJECT_DIR$/architectures/supervised/dense.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conda/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/conda/install.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" beforeDir="false" afterPath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectures/supervised/simple.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/generation_observations_based_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_observations_based_concepts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/learning_concept_observation_correspondence.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/learning_concept_observation_correspondence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/singular_value_decomposition_latent_spaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/singular_value_decomposition_latent_spaces.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +262,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
       </set>
     </attachedChunks>
   </component>
@@ -344,7 +339,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719414302219</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add : reinforcement learning, Mod : pong_survivor">
+      <option name="closed" value="true" />
+      <created>1719504915012</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719504915012</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -355,7 +358,8 @@
     <MESSAGE value="Reorganization of modules and utilities" />
     <MESSAGE value="Add load model and generation_observations_based_concepts.py" />
     <MESSAGE value="Add environment and image generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add environment and image generation" />
+    <MESSAGE value="Add : reinforcement learning, Mod : pong_survivor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add : reinforcement learning, Mod : pong_survivor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
