@@ -3,7 +3,9 @@ import ray
 from architectures.reinforcement.register_architectures import register_architectures
 from environments.register_environments import register_environments
 from modules.agent_training_by_reinforcement_learning import agent_training_by_reinforcement_learning
+from modules.generation_observation_dataset import generation_observation_dataset
 from modules.generation_observations_based_concepts import generation_observations_based_concepts
+from modules.generation_projection_dataset import generation_projection_dataset
 from modules.learning_concept_observation_correspondence import learning_concept_observation_correspondence
 from modules.singular_value_decomposition_latent_spaces import singular_value_decomposition_embeddings
 from utilities.path import PathManager
@@ -22,6 +24,7 @@ if __name__ == '__main__':
 
     # Environment
     environment_name = 'PongSurvivor'
+    environment_creator = PongSurvivor
     environment_configuration = environment_configurations.classic_one_ball
 
     # Reinforcement Learning
@@ -31,7 +34,7 @@ if __name__ == '__main__':
         'layers_use_clustering': [False, False, True, False, False],
     }
     stopping_criterion = {
-        'time_total_s': 60 * 10,
+        'time_total_s': 60 * 5,
         'env_runners/episode_reward_mean': 0.95,
     }
 
@@ -48,21 +51,33 @@ if __name__ == '__main__':
         stopping_criterion=stopping_criterion,
     )
 
-    # singular_value_decomposition_embeddings(
-    #     path_manager=path_manager
-    # )
-    #
-    # learning_concept_observation_correspondence(
-    #     path_manager=path_manager,
-    #     architecture=supervised_learning_architecture,
-    # )
-    #
-    # environment = PongSurvivor(environment_configuration)
-    # environment.render_mode = 'rgb_array'
-    # generation_observations_based_concepts(
-    #     path_manager=path_manager,
-    #     environment=environment,
-    # )
+    generation_observation_dataset(
+        path_manager=path_manager,
+        workers_number=10,
+        number_episodes_per_worker=10,
+        number_iterations=10,
+    )
+
+    generation_projection_dataset(
+        path_manager=path_manager,
+        workers_number=2,
+    )
+
+    singular_value_decomposition_embeddings(
+        path_manager=path_manager
+    )
+
+    learning_concept_observation_correspondence(
+        path_manager=path_manager,
+        architecture=supervised_learning_architecture,
+    )
+
+    environment = PongSurvivor(environment_configuration)
+    environment.render_mode = 'rgb_array'
+    generation_observations_based_concepts(
+        path_manager=path_manager,
+        environment=environment,
+    )
 
 
 

@@ -6,6 +6,7 @@ from ray.rllib.algorithms.ppo import PPOConfig, PPO
 
 
 def train(
+    rllib_trial_name,
     rllib_directory,
     environment_name: str,
     environment_configuration: dict,
@@ -58,6 +59,7 @@ def train(
         trainable=PPO,
         param_space=algorithm_configuration,
         run_config=air.RunConfig(
+            name=rllib_trial_name,
             storage_path=rllib_directory,
             stop=stopping_criterion,
             checkpoint_config=air.CheckpointConfig(

@@ -11,6 +11,7 @@ def agent_training_by_reinforcement_learning(
     stopping_criterion,
 ):
     train(
+        rllib_trial_name=path_manager.rllib_trial_name,
         rllib_directory=path_manager.rllib_directory,
         environment_name=environment_name,
         environment_configuration=environment_configuration,

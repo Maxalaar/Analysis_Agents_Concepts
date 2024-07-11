@@ -9,7 +9,7 @@ def learning_concept_observation_correspondence(path_manager: PathManager, archi
         tensorboard_path=path_manager.lightning_tensorboard_directory,
         model_path=path_manager.lightning_model_directory,
         x_name='embeddings_singular_basis',
-        y_name='observation',
+        y_name='observations',
         accelerator='gpu',
         batch_size=64*64*64,
     )

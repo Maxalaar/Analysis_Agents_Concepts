@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : reinforcement learning, Mod : pong_survivor">
-      <change afterPath="$PROJECT_DIR$/architectures/supervised/dense.py" afterDir="false" />
+    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : dense supervised model, supervised batch_size&#10;Mod : custom_scaling">
+      <change afterPath="$PROJECT_DIR$/modules/generation_observation_dataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/generation_projection_dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/architectures/supervised/simple.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/learning_concept_observation_correspondence.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/learning_concept_observation_correspondence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/singular_value_decomposition_latent_spaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/singular_value_decomposition_latent_spaces.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,8 +54,8 @@
   "keyToString": {
     "Python.install.executor": "Run",
     "Python.load_pytorch_lightning.executor": "Run",
-    "Python.pipeline.executor": "Run",
-    "Python.prov.executor": "Debug",
+    "Python.pipeline.executor": "Debug",
+    "Python.prov.executor": "Run",
     "Python.pytorch_lightning_tune.executor": "Run",
     "Python.pytorch_lightning_v3.executor": "Run",
     "Python.reset.executor": "Run",
@@ -66,7 +66,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/malaarabiou/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts/architectures/reinforcement",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -152,7 +152,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="prov" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="prov_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Analysis_Agents_Concepts" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,7 +165,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/prov.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/prov_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -243,16 +243,16 @@
     <list>
       <item itemvalue="Python.reset" />
       <item itemvalue="Python.install" />
-      <item itemvalue="Python.prov" />
       <item itemvalue="Python.pipeline" />
       <item itemvalue="Python.load_pytorch_lightning" />
       <item itemvalue="Python.train_pytorch_lightning" />
       <item itemvalue="Python.save" />
+      <item itemvalue="Python.prov_1" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.pipeline" />
-        <item itemvalue="Python.prov" />
+        <item itemvalue="Python.prov_1" />
         <item itemvalue="Python.save" />
         <item itemvalue="Python.load_pytorch_lightning" />
         <item itemvalue="Python.train_pytorch_lightning" />
@@ -347,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719504915012</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add : dense supervised model, supervised batch_size&#10;Mod : custom_scaling">
+      <option name="closed" value="true" />
+      <created>1720450257927</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720450257927</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -359,7 +367,8 @@
     <MESSAGE value="Add load model and generation_observations_based_concepts.py" />
     <MESSAGE value="Add environment and image generation" />
     <MESSAGE value="Add : reinforcement learning, Mod : pong_survivor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add : reinforcement learning, Mod : pong_survivor" />
+    <MESSAGE value="Add : dense supervised model, supervised batch_size&#10;Mod : custom_scaling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add : dense supervised model, supervised batch_size&#10;Mod : custom_scaling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -368,6 +377,16 @@
           <url>file://$PROJECT_DIR$/environments/pong_survivor/render.py</url>
           <line>12</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/modules/generation_observation_dataset.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/modules/generation_observation_dataset.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

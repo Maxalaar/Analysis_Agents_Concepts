@@ -1,8 +1,23 @@
+import os
 import h5py
 import torch
 from torch.utils.data import DataLoader, TensorDataset, random_split, StackDataset
 import pytorch_lightning as pl
 from torch.utils.data import Dataset
+
+
+def save_data_to_h5(filename, dataset_name, data):
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    with h5py.File(filename, 'a') as h5file:
+        if dataset_name in h5file:
+            # Dataset exists, append data
+            dataset = h5file[dataset_name]
+            dataset.resize((dataset.shape[0] + data.shape[0]), axis=0)
+            dataset[-data.shape[0]:] = data
+        else:
+            # Dataset does not exist, create it
+            max_shape = (None,) + data.shape[1:]  # None allows unlimited growth in the first dimension
+            dataset = h5file.create_dataset(dataset_name, data=data, maxshape=max_shape)
 
 
 def get_h5_shapes(path, name):

@@ -21,8 +21,11 @@ class PathManager:
         self.experiment_directory = os.path.join(self.experiments_directory, self.experiment_name)
 
         self.rllib_directory = os.path.join(self.experiment_directory, 'rllib')
+        self.rllib_trial_name = 'rllib_base_trial'
+        self.rllib_trial_path = os.path.join(self.rllib_directory, self.rllib_trial_name)
 
         self.datasets_directory = os.path.join(self.experiment_directory, 'datasets')
+        self.observations_dataset = os.path.join(self.datasets_directory, 'observations.h5')
         self.embeddings_dataset = os.path.join(self.datasets_directory, 'embeddings.h5')
 
         self.lightning_directory = os.path.join(self.experiment_directory, 'lightning')
