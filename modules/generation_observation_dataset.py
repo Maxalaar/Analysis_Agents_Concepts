@@ -1,11 +1,12 @@
 import gymnasium
 import numpy as np
 import ray
-from ray.rllib.algorithms import Algorithm, AlgorithmConfig
-from ray.tune import Tuner
+from ray.rllib.algorithms import AlgorithmConfig
 
 from utilities.data import save_data_to_h5
 from utilities.path import PathManager
+from utilities.ray.path_best_checkpoints import path_best_checkpoints
+from utilities.ray.restore_best_algorithm import restore_best_algorithm
 
 
 @ray.remote
@@ -44,12 +45,8 @@ def generation_observation_dataset(
         number_episodes_per_worker,
         number_iterations,
 ):
-    tuner = Tuner.restore(path=path_manager.rllib_trial_path, trainable='PPO')
-    result_grid = tuner.get_results()
-    best_result = result_grid.get_best_result(metric='episode_reward_mean', mode='max')
-    path_checkpoint = best_result.best_checkpoints[0][0].path
-
-    algorithm: Algorithm = Algorithm.from_checkpoint(path_checkpoint)
+    path_checkpoint = path_best_checkpoints(path_manager.rllib_trial_path)
+    algorithm = restore_best_algorithm(path_manager.rllib_trial_path)
     configuration = algorithm.config.copy(copy_frozen=False)
     del algorithm
     configuration.learners(num_learners=0)

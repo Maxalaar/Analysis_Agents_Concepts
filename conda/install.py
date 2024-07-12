@@ -22,6 +22,7 @@ if __name__ == '__main__':
         "conda install -c conda-forge ray-tune --yes",
         "conda install -c conda-forge ray-rllib --yes",
         "conda install -c conda-forge matplotlib --yes",
+        "conda install -c conda-forge scikit-learn --yes",
         "conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia --yes",
         "conda install conda-forge::pytorch-lightning --yes",
         "conda install h5py --yes",

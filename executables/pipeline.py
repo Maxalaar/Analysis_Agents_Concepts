@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 import ray
 
 from architectures.reinforcement.register_architectures import register_architectures
@@ -19,7 +21,7 @@ if __name__ == '__main__':
     register_environments()
 
     ray.init(local_mode=False)
-    experiment_name = 'debug_rl'
+    experiment_name = 'debug_all'
     path_manager = PathManager(experiment_name)
 
     # Environment
@@ -34,12 +36,19 @@ if __name__ == '__main__':
         'layers_use_clustering': [False, False, True, False, False],
     }
     stopping_criterion = {
-        'time_total_s': 60 * 5,
+        'time_total_s': 60 * 60,
         'env_runners/episode_reward_mean': 0.95,
     }
 
+    # Generation dataset
+    workers_number = 10
+    number_episodes_per_worker = 100
+    number_iterations = 10
+
     # Supervised Learning
     supervised_learning_architecture = Dense
+    max_time = timedelta(minutes=60)
+    batch_size = 64*64*64
 
     # Run
     agent_training_by_reinforcement_learning(
@@ -53,9 +62,9 @@ if __name__ == '__main__':
 
     generation_observation_dataset(
         path_manager=path_manager,
-        workers_number=10,
-        number_episodes_per_worker=10,
-        number_iterations=10,
+        workers_number=workers_number,
+        number_episodes_per_worker=number_episodes_per_worker,
+        number_iterations=number_iterations,
     )
 
     generation_projection_dataset(
@@ -70,6 +79,8 @@ if __name__ == '__main__':
     learning_concept_observation_correspondence(
         path_manager=path_manager,
         architecture=supervised_learning_architecture,
+        batch_size=batch_size,
+        max_time=max_time,
     )
 
     environment = PongSurvivor(environment_configuration)

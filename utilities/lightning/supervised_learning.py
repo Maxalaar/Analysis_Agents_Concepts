@@ -1,6 +1,9 @@
+from datetime import timedelta
+
 import pytorch_lightning as pl
 from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import ModelCheckpoint, EarlyStopping
+from pytorch_lightning.callbacks import Timer
 
 from utilities.data import DataModule
 from utilities.lightning.module import Supervised
@@ -20,12 +23,15 @@ def train(
         accelerator='cpu',
         devices='auto',
         batch_size=32,
+        max_time=timedelta(days=7),
 ):
     data_module = DataModule(data_path, x_name, y_name, batch_size=batch_size)
     model = architecture(data_module.x_shape, data_module.y_shape)
     model_module = Supervised(model)
 
+    timer = Timer(duration=max_time)
     logger = TensorBoardLogger(
+        prefix='lightning/',
         save_dir=tensorboard_path,
     )
     checkpoint_callback = ModelCheckpoint(
@@ -44,7 +50,7 @@ def train(
     trainer = pl.Trainer(
         max_epochs=max_epochs,
         logger=logger,
-        callbacks=[checkpoint_callback, early_stop_callback],
+        callbacks=[checkpoint_callback, early_stop_callback, timer],
         accelerator=accelerator,
         devices=devices,
     )
