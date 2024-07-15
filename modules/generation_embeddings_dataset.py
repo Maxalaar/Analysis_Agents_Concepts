@@ -29,7 +29,7 @@ class WorkerProjectionGeneration:
         del self.projections
 
 
-def generation_projection_dataset(
+def generation_embeddings_dataset(
         path_manager: PathManager,
         workers_number,
 ):

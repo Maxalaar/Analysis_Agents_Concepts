@@ -6,10 +6,8 @@ from architectures.reinforcement.register_architectures import register_architec
 from environments.register_environments import register_environments
 from modules.agent_training_by_reinforcement_learning import agent_training_by_reinforcement_learning
 from modules.generation_observation_dataset import generation_observation_dataset
-from modules.generation_observations_based_concepts import generation_observations_based_concepts
-from modules.generation_projection_dataset import generation_projection_dataset
-from modules.learning_concept_observation_correspondence import learning_concept_observation_correspondence
-from modules.singular_value_decomposition_latent_spaces import singular_value_decomposition_embeddings
+from modules.generation_embeddings_dataset import generation_embeddings_dataset
+from modules.methods_concept_extraction.pca_extraction_concepts import pca_extraction_concepts
 from utilities.path import PathManager
 from architectures.supervised.dense import Dense
 import environments.environment_configurations as environment_configurations
@@ -47,8 +45,8 @@ if __name__ == '__main__':
 
     # Supervised Learning
     supervised_learning_architecture = Dense
-    max_time = timedelta(minutes=60)
-    batch_size = 64*64*64
+    max_time = timedelta(hours=2, minutes=0)
+    batch_size = 64*64*64*10
 
     # Run
     agent_training_by_reinforcement_learning(
@@ -67,28 +65,25 @@ if __name__ == '__main__':
         number_iterations=number_iterations,
     )
 
-    generation_projection_dataset(
+    generation_embeddings_dataset(
         path_manager=path_manager,
         workers_number=2,
     )
 
-    singular_value_decomposition_embeddings(
-        path_manager=path_manager
-    )
-
-    learning_concept_observation_correspondence(
+    pca_extraction_concepts(
         path_manager=path_manager,
         architecture=supervised_learning_architecture,
         batch_size=batch_size,
         max_time=max_time,
+        environment_creator=environment_creator,
+        environment_configuration=environment_configuration,
+        decomposition=False,
+        learning=True,
+        generation=False,
     )
 
-    environment = PongSurvivor(environment_configuration)
-    environment.render_mode = 'rgb_array'
-    generation_observations_based_concepts(
-        path_manager=path_manager,
-        environment=environment,
-    )
+
+
 
 
 

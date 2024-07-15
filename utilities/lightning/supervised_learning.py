@@ -16,6 +16,7 @@ def train(
         x_name,
         y_name,
         architecture,
+        model_name,
         max_epochs=-1,
         max_model_save=3,
         save_interval=5,
@@ -31,13 +32,14 @@ def train(
 
     timer = Timer(duration=max_time)
     logger = TensorBoardLogger(
+        name=model_name,
         prefix='lightning/',
         save_dir=tensorboard_path,
     )
     checkpoint_callback = ModelCheckpoint(
         monitor='validation_loss',
         dirpath=model_path,
-        filename='model-{epoch:02d}-{val_loss:.2f}',
+        filename=str(model_name) + '/model-{epoch:02d}-{val_loss:.2f}',
         save_top_k=max_model_save,
         mode='min',
         every_n_epochs=save_interval,

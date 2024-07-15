@@ -7,9 +7,9 @@ from utilities.lightning.load import load
 from utilities.image import save
 
 
-def generation_observations_based_concepts(path_manager: PathManager, environment, number_elements_per_concept=100):
+def generation_observations_based_concepts(path_manager: PathManager, model_name, environment, number_elements_per_concept=100):
     model_module = load(
-        model_directory=path_manager.lightning_model_directory,
+        model_directory=path_manager.lightning_models_directory + '/' + str(model_name),
     )
     number_concepts = model_module.model.input_size
 
@@ -30,7 +30,7 @@ def generation_observations_based_concepts(path_manager: PathManager, environmen
             representation = environment.render()
             save(
                 image=representation,
-                directory=os.path.join(path_manager.concepts_directory, 'concept_' + str(concept_number)),
+                directory=os.path.join(path_manager.concepts_directory + '/' + str(model_name), 'concept_' + str(concept_number)),
                 name=str(observation_number) + '.png',
             )
 

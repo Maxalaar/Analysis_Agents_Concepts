@@ -52,6 +52,11 @@ if __name__ == "__main__":
         'ray/tune/perf/ram_util_percent',
     ]
 
+    list_lightning = [
+        'lightning/-train_loss',
+        'lightning/-validation_loss',
+    ]
+
     process: Process = Process(target=run_tensorboard)
     process.start()
     time.sleep(5)
@@ -61,6 +66,9 @@ if __name__ == "__main__":
 
     # Monitoring Ray Dashboard
     webbrowser.open('127.0.0.1:8265')
+
+    # Monitoring of lightning
+    webbrowser.open(list_to_url(list_lightning))
 
     # Monitoring of learning
     webbrowser.open(list_to_url(list_learning))

@@ -27,7 +27,8 @@ if __name__ == '__main__':
         "conda install conda-forge::pytorch-lightning --yes",
         "conda install h5py --yes",
         "conda install -c conda-forge tensorboard --yes",
-        "conda install dask -c conda-forge --yes",
+        "conda install -c conda-forge dask --yes",
+        "conda install -c conda-forge dask-ml --yes"
         "conda install gputil --yes",
         "pip install pygame",
     ]

@@ -30,7 +30,7 @@ class PathManager:
 
         self.lightning_directory = os.path.join(self.experiment_directory, 'lightning')
         self.lightning_tensorboard_directory = os.path.join(self.lightning_directory, 'tensorboard')
-        self.lightning_model_directory = os.path.join(self.lightning_directory, 'model')
+        self.lightning_models_directory = os.path.join(self.lightning_directory, 'model')
 
         self.images_directory = os.path.join(self.experiment_directory, 'images')
         self.concepts_directory = os.path.join(self.images_directory, 'concepts')

@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : dense supervised model, supervised batch_size&#10;Mod : custom_scaling">
-      <change afterPath="$PROJECT_DIR$/modules/generation_observation_dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/generation_projection_dataset.py" afterDir="false" />
+    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : monitoring&#10;Mod : minor fix">
+      <change afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/svd_extraction_concepts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/concept_extraction/principal_component_analysis_embeddings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/custom_scaling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conda/configuration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conda/configuration.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conda/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/conda/install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executables/monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/monitoring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/generation_observations_based_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/generation_observations_based_concepts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/generation_projection_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_embeddings_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/learning_concept_observation_correspondence.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/learning_concept_observation_correspondence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/singular_value_decomposition_latent_spaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/singular_value_decomposition_embeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,41 +57,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.install.executor": "Run",
-    "Python.load_pytorch_lightning.executor": "Run",
-    "Python.pipeline.executor": "Debug",
-    "Python.prov.executor": "Run",
-    "Python.pytorch_lightning_tune.executor": "Run",
-    "Python.pytorch_lightning_v3.executor": "Run",
-    "Python.reset.executor": "Run",
-    "Python.restore.executor": "Run",
-    "Python.restore_conda_environment.executor": "Run",
-    "Python.save.executor": "Run",
-    "Python.save_conda_environment.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/malaarabiou/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts/architectures/reinforcement",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.install.executor&quot;: &quot;Run&quot;,
+    &quot;Python.load_pytorch_lightning.executor&quot;: &quot;Run&quot;,
+    &quot;Python.monitoring.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pipeline.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prov.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prov_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prov_3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pytorch_lightning_tune.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pytorch_lightning_v3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.reset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.restore.executor&quot;: &quot;Run&quot;,
+    &quot;Python.restore_conda_environment.executor&quot;: &quot;Run&quot;,
+    &quot;Python.save.executor&quot;: &quot;Run&quot;,
+    &quot;Python.save_conda_environment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/malaarabiou/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts/executables&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/executables" />
       <recent name="$PROJECT_DIR$/architectures/reinforcement" />
       <recent name="$PROJECT_DIR$/utilities" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/experimentations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/utilities/concept_extraction" />
+      <recent name="$PROJECT_DIR$/temporaries" />
       <recent name="$PROJECT_DIR$/experiments/debug_3/datasets" />
       <recent name="$PROJECT_DIR$/utilities/ray" />
       <recent name="$PROJECT_DIR$/utilities" />
-      <recent name="$PROJECT_DIR$/experimentations" />
-      <recent name="$PROJECT_DIR$/temporaries" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.pipeline">
+  <component name="RunManager" selected="Python.save">
     <configuration name="install" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Analysis_Agents_Concepts" />
       <option name="ENV_FILES" value="" />
@@ -108,7 +119,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="load_pytorch_lightning" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="monitoring" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Analysis_Agents_Concepts" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,11 +128,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experimentations" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/executables" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/load_pytorch_lightning.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/executables/monitoring.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,7 +163,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="prov_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="prov_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Analysis_Agents_Concepts" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,7 +176,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/prov_1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/prov_2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="prov_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Analysis_Agents_Concepts" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/temporaries" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/prov_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -218,44 +251,22 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_pytorch_lightning" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Analysis_Agents_Concepts" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/experimentations" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/train_pytorch_lightning.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.reset" />
       <item itemvalue="Python.install" />
+      <item itemvalue="Python.monitoring" />
+      <item itemvalue="Python.prov_2" />
+      <item itemvalue="Python.prov_3" />
       <item itemvalue="Python.pipeline" />
-      <item itemvalue="Python.load_pytorch_lightning" />
-      <item itemvalue="Python.train_pytorch_lightning" />
       <item itemvalue="Python.save" />
-      <item itemvalue="Python.prov_1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.pipeline" />
-        <item itemvalue="Python.prov_1" />
         <item itemvalue="Python.save" />
-        <item itemvalue="Python.load_pytorch_lightning" />
-        <item itemvalue="Python.train_pytorch_lightning" />
+        <item itemvalue="Python.pipeline" />
+        <item itemvalue="Python.monitoring" />
+        <item itemvalue="Python.prov_3" />
+        <item itemvalue="Python.prov_2" />
       </list>
     </recent_temporary>
   </component>
@@ -355,7 +366,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720450257927</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add : generation_observation_dataset.py and generation_projection_dataset.py">
+      <option name="closed" value="true" />
+      <created>1720699412830</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720699412830</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add : monitoring&#10;Mod : minor fix">
+      <option name="closed" value="true" />
+      <created>1720773076660</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1720773076660</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -368,7 +395,9 @@
     <MESSAGE value="Add environment and image generation" />
     <MESSAGE value="Add : reinforcement learning, Mod : pong_survivor" />
     <MESSAGE value="Add : dense supervised model, supervised batch_size&#10;Mod : custom_scaling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add : dense supervised model, supervised batch_size&#10;Mod : custom_scaling" />
+    <MESSAGE value="Add : generation_observation_dataset.py and generation_projection_dataset.py" />
+    <MESSAGE value="Add : monitoring&#10;Mod : minor fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add : monitoring&#10;Mod : minor fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -379,14 +408,19 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/modules/generation_observation_dataset.py</url>
-          <line>16</line>
-          <option name="timeStamp" value="28" />
+          <url>file://$PROJECT_DIR$/utilities/data.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/modules/generation_observation_dataset.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="29" />
+          <url>file://$PROJECT_DIR$/utilities/data.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/temporaries/prov_3.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
