@@ -14,6 +14,9 @@ def pca_extraction_concepts(
     decomposition=True,
     learning=True,
     generation=True,
+    accelerator='gpu',
+    number_worker_datamodule=1,
+    check_val_every_n_epoch=1,
 ):
     if decomposition:
         principal_component_analysis_embeddings(
@@ -28,6 +31,9 @@ def pca_extraction_concepts(
             batch_size=batch_size,
             max_time=max_time,
             x_name='embeddings_principal_component_bases',
+            accelerator=accelerator,
+            number_worker_datamodule=number_worker_datamodule,
+            check_val_every_n_epoch=check_val_every_n_epoch,
         )
 
     if generation:

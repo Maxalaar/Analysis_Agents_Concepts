@@ -34,19 +34,27 @@ if __name__ == '__main__':
         'layers_use_clustering': [False, False, True, False, False],
     }
     stopping_criterion = {
-        'time_total_s': 60 * 60,
-        'env_runners/episode_reward_mean': 0.95,
+        'time_total_s': 60 * 60 * 2,
+        'env_runners/episode_reward_mean': 0.80,
     }
+    num_learners = 1
+    num_env_runners = 5
+    evaluation_num_env_runners = 1
+    evaluation_interval = 10
 
     # Generation dataset
-    workers_number = 10
-    number_episodes_per_worker = 100
-    number_iterations = 10
+    workers_number = 5
+    number_episodes_per_worker = 50
+    number_iterations = 50
 
     # Supervised Learning
     supervised_learning_architecture = Dense
+    accelerator = 'gpu'
     max_time = timedelta(hours=2, minutes=0)
     batch_size = 64*64*64*10
+    number_worker_datamodule = 4
+    check_val_every_n_epoch = 100
+
 
     # Run
     agent_training_by_reinforcement_learning(
@@ -56,6 +64,10 @@ if __name__ == '__main__':
         architecture_name=reinforcement_learning_architecture_name,
         architecture_configuration=reinforcement_learning_architecture_configuration,
         stopping_criterion=stopping_criterion,
+        num_learners=num_learners,
+        num_env_runners=num_env_runners,
+        evaluation_num_env_runners=evaluation_num_env_runners,
+        evaluation_interval=evaluation_interval,
     )
 
     generation_observation_dataset(
@@ -77,9 +89,12 @@ if __name__ == '__main__':
         max_time=max_time,
         environment_creator=environment_creator,
         environment_configuration=environment_configuration,
-        decomposition=False,
+        decomposition=True,
         learning=True,
-        generation=False,
+        generation=True,
+        accelerator=accelerator,
+        number_worker_datamodule=number_worker_datamodule,
+        check_val_every_n_epoch=check_val_every_n_epoch,
     )
 
 

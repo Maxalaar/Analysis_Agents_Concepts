@@ -45,8 +45,8 @@ class H5Dataset(Dataset):
         self.output_key = output_key
 
         with h5py.File(self.path, 'r') as file:
-            self.input = torch.tensor(file[self.input_key], dtype=torch.float32)
-            self.output = torch.tensor(file[self.output_key], dtype=torch.float32)
+            self.input = torch.tensor(file[self.input_key][:], dtype=torch.float32)
+            self.output = torch.tensor(file[self.output_key][:], dtype=torch.float32)
 
     def __len__(self):
         return len(self.input)
@@ -58,11 +58,12 @@ class H5Dataset(Dataset):
 
 
 class DataModule(pl.LightningDataModule):
-    def __init__(self, path, x_name, y_name, batch_size=32, test_ratio=0.2):
+    def __init__(self, path, x_name, y_name, batch_size=32, test_ratio=0.2, number_workers=1):
         super().__init__()
         self.path = path
         self.x_name = x_name
         self.y_name = y_name
+        self.number_workers = number_workers
 
         self.x_shape = get_h5_shapes(self.path, self.x_name)[1:]
         self.y_shape = get_h5_shapes(self.path, self.y_name)[1:]
@@ -82,10 +83,10 @@ class DataModule(pl.LightningDataModule):
         self.train_data, self.test_data = split_dataset(dataset, self.test_ratio)
 
     def train_dataloader(self):
-        return DataLoader(self.train_data, batch_size=self.batch_size, shuffle=True)
+        return DataLoader(self.train_data, batch_size=self.batch_size, shuffle=True, num_workers=self.number_workers)
 
     def val_dataloader(self):
-        return DataLoader(self.test_data, batch_size=self.batch_size)
+        return DataLoader(self.test_data, batch_size=self.batch_size, num_workers=self.number_workers)
 
     def test_dataloader(self):
-        return DataLoader(self.test_data, batch_size=self.batch_size)
+        return DataLoader(self.test_data, batch_size=self.batch_size, num_workers=self.number_workers)

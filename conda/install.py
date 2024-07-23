@@ -15,6 +15,7 @@ def install_command(command):
 if __name__ == '__main__':
     # List of commands to run
     commands = [
+        "conda install -c conda-forge nvidia::cuda --yes",
         "conda install -c conda-forge ray-core --yes",
         "conda install -c conda-forge ray-default --yes",
         "conda install -c conda-forge ray-data --yes",

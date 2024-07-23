@@ -9,6 +9,10 @@ def agent_training_by_reinforcement_learning(
     architecture_name,
     architecture_configuration,
     stopping_criterion,
+    num_learners=1,
+    num_env_runners=5,
+    evaluation_num_env_runners=1,
+    evaluation_interval=100,
 ):
     train(
         rllib_trial_name=path_manager.rllib_trial_name,
@@ -18,8 +22,8 @@ def agent_training_by_reinforcement_learning(
         architecture_name=architecture_name,
         architecture_configuration=architecture_configuration,
         stopping_criterion=stopping_criterion,
-        num_learners=1,
-        num_env_runners=10,
-        evaluation_num_env_runners=1,
-        evaluation_interval=100,
+        num_learners=num_learners,
+        num_env_runners=num_env_runners,
+        evaluation_num_env_runners=evaluation_num_env_runners,
+        evaluation_interval=evaluation_interval,
     )

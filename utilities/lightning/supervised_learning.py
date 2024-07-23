@@ -25,8 +25,10 @@ def train(
         devices='auto',
         batch_size=32,
         max_time=timedelta(days=7),
+        number_worker_datamodule=1,
+        check_val_every_n_epoch=1,
 ):
-    data_module = DataModule(data_path, x_name, y_name, batch_size=batch_size)
+    data_module = DataModule(data_path, x_name, y_name, batch_size=batch_size, number_workers=number_worker_datamodule)
     model = architecture(data_module.x_shape, data_module.y_shape)
     model_module = Supervised(model)
 
@@ -51,10 +53,11 @@ def train(
 
     trainer = pl.Trainer(
         max_epochs=max_epochs,
+        check_val_every_n_epoch=check_val_every_n_epoch,
         logger=logger,
         callbacks=[checkpoint_callback, early_stop_callback, timer],
         accelerator=accelerator,
         devices=devices,
     )
 
-    trainer.fit(model_module, data_module)
+    trainer.fit(model=model_module, datamodule=data_module)

@@ -5,21 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : monitoring&#10;Mod : minor fix">
-      <change afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/svd_extraction_concepts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/concept_extraction/principal_component_analysis_embeddings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/custom_scaling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Analysis_Agents_Concepts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Analysis_Agents_Concepts.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conda/configuration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conda/configuration.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conda/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/conda/install.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executables/monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/monitoring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/generation_observations_based_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/generation_observations_based_concepts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/generation_projection_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_embeddings_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/learning_concept_observation_correspondence.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/learning_concept_observation_correspondence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/singular_value_decomposition_latent_spaces.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/singular_value_decomposition_embeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/learning_concept_observation_correspondence.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/learning_concept_observation_correspondence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,28 +52,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.install.executor&quot;: &quot;Run&quot;,
-    &quot;Python.load_pytorch_lightning.executor&quot;: &quot;Run&quot;,
-    &quot;Python.monitoring.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pipeline.executor&quot;: &quot;Run&quot;,
-    &quot;Python.prov.executor&quot;: &quot;Run&quot;,
-    &quot;Python.prov_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.prov_3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pytorch_lightning_tune.executor&quot;: &quot;Run&quot;,
-    &quot;Python.pytorch_lightning_v3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.reset.executor&quot;: &quot;Run&quot;,
-    &quot;Python.restore.executor&quot;: &quot;Run&quot;,
-    &quot;Python.restore_conda_environment.executor&quot;: &quot;Run&quot;,
-    &quot;Python.save.executor&quot;: &quot;Run&quot;,
-    &quot;Python.save_conda_environment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/malaarabiou/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts/executables&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.install.executor": "Run",
+    "Python.load_pytorch_lightning.executor": "Run",
+    "Python.monitoring.executor": "Run",
+    "Python.pipeline.executor": "Run",
+    "Python.prov.executor": "Run",
+    "Python.prov_2.executor": "Run",
+    "Python.prov_3.executor": "Run",
+    "Python.pytorch_lightning_tune.executor": "Run",
+    "Python.pytorch_lightning_v3.executor": "Run",
+    "Python.reset.executor": "Run",
+    "Python.restore.executor": "Run",
+    "Python.restore_conda_environment.executor": "Run",
+    "Python.save.executor": "Run",
+    "Python.save_conda_environment.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/mnt/873a422e-1bf1-4c0b-b123-e47e6872b379/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/executables" />
@@ -95,7 +91,7 @@
       <recent name="$PROJECT_DIR$/utilities" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.save">
+  <component name="RunManager" selected="Python.pipeline">
     <configuration name="install" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Analysis_Agents_Concepts" />
       <option name="ENV_FILES" value="" />
@@ -105,7 +101,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="Analysis_Agents_Concepts" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -163,7 +158,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="prov_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="prov" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Analysis_Agents_Concepts" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,29 +171,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/prov_2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="prov_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Analysis_Agents_Concepts" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/temporaries" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/prov_3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/temporaries/prov.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -221,6 +194,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/conda/reset.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="restore" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Analysis_Agents_Concepts" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/conda" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/conda/restore.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -254,26 +249,26 @@
     <list>
       <item itemvalue="Python.reset" />
       <item itemvalue="Python.install" />
+      <item itemvalue="Python.prov" />
+      <item itemvalue="Python.restore" />
       <item itemvalue="Python.monitoring" />
-      <item itemvalue="Python.prov_2" />
-      <item itemvalue="Python.prov_3" />
       <item itemvalue="Python.pipeline" />
       <item itemvalue="Python.save" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.save" />
         <item itemvalue="Python.pipeline" />
         <item itemvalue="Python.monitoring" />
-        <item itemvalue="Python.prov_3" />
-        <item itemvalue="Python.prov_2" />
+        <item itemvalue="Python.prov" />
+        <item itemvalue="Python.save" />
+        <item itemvalue="Python.restore" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
       </set>
     </attachedChunks>
   </component>
@@ -406,16 +401,6 @@
           <url>file://$PROJECT_DIR$/environments/pong_survivor/render.py</url>
           <line>12</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utilities/data.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utilities/data.py</url>
-          <line>13</line>
-          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/temporaries/prov_3.py</url>
