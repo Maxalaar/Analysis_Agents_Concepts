@@ -34,3 +34,6 @@ class PathManager:
 
         self.images_directory = os.path.join(self.experiment_directory, 'images')
         self.concepts_directory = os.path.join(self.images_directory, 'concepts')
+
+        self.videos_directory = os.path.join(self.experiment_directory, 'videos')
+        self.episodes_directory = os.path.join(self.videos_directory, 'episodes')

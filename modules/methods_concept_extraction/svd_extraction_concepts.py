@@ -1,5 +1,5 @@
 from utilities.concept_extraction.generation_observations_based_concepts import generation_observations_based_concepts
-from utilities.concept_extraction.learning_concept_observation_correspondence import learning_concept_observation_correspondence
+import utilities.lightning.learning
 from utilities.path import PathManager
 from utilities.concept_extraction.singular_value_decomposition_embeddings import singular_value_decomposition_embeddings
 
@@ -10,25 +10,40 @@ def svd_extraction_concepts(
     batch_size,
     max_time,
     environment_creator,
-    environment_configuration
+    environment_configuration,
+    decomposition=True,
+    learning=True,
+    generation=True,
+    accelerator='gpu',
+    number_worker_datamodule=1,
+    check_val_every_n_epoch=1,
 ):
-    singular_value_decomposition_embeddings(
-        path_manager=path_manager,
-    )
+    if decomposition:
+        singular_value_decomposition_embeddings(
+            path_manager=path_manager,
+        )
 
-    learning_concept_observation_correspondence(
-        path_manager=path_manager,
-        model_name='svd_to_obs',
-        architecture=architecture,
-        batch_size=batch_size,
-        max_time=max_time,
-        x_name='embeddings_singular_basis',
-    )
+    if learning:
+        utilities.lightning.learning.train(
+            model_name='svd_to_obs',
+            data_path=path_manager.embeddings_dataset,
+            architecture=architecture,
+            tensorboard_path=path_manager.lightning_tensorboard_directory,
+            model_path=path_manager.lightning_models_directory,
+            x_name='embeddings_singular_basis',
+            y_name='observations',
+            accelerator=accelerator,
+            batch_size=batch_size,
+            max_time=max_time,
+            number_worker_datamodule=number_worker_datamodule,
+            check_val_every_n_epoch=check_val_every_n_epoch,
+        )
 
-    environment = environment_creator(environment_configuration)
-    environment.render_mode = 'rgb_array'
-    generation_observations_based_concepts(
-        path_manager=path_manager,
-        model_name='svd_to_obs',
-        environment=environment,
-    )
+    if generation:
+        environment = environment_creator(environment_configuration)
+        environment.render_mode = 'rgb_array'
+        generation_observations_based_concepts(
+            path_manager=path_manager,
+            model_name='svd_to_obs',
+            environment=environment,
+        )

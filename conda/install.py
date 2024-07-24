@@ -31,6 +31,7 @@ if __name__ == '__main__':
         "conda install -c conda-forge dask --yes",
         "conda install -c conda-forge dask-ml --yes"
         "conda install gputil --yes",
+        "conda install -c conda-forge opencv --yes",
         "pip install pygame",
     ]
 

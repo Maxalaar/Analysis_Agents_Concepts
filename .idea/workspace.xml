@@ -4,17 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : monitoring&#10;Mod : minor fix">
-      <change beforePath="$PROJECT_DIR$/.idea/Analysis_Agents_Concepts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Analysis_Agents_Concepts.iml" afterDir="false" />
+    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : Better graphics card management and performance optimization">
+      <change afterPath="$PROJECT_DIR$/modules/generation_episode_videos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/linear_perturbation_latent_space.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/lightning/perturbator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/video.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conda/configuration.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conda/configuration.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conda/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/conda/install.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" beforeDir="false" afterPath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/generation_observation_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_observation_dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/learning_concept_observation_correspondence.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/learning_concept_observation_correspondence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/methods_concept_extraction/svd_extraction_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/svd_extraction_concepts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/learning_concept_observation_correspondence.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/lightning/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/load.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/lightning/module.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,29 +58,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.install.executor": "Run",
-    "Python.load_pytorch_lightning.executor": "Run",
-    "Python.monitoring.executor": "Run",
-    "Python.pipeline.executor": "Run",
-    "Python.prov.executor": "Run",
-    "Python.prov_2.executor": "Run",
-    "Python.prov_3.executor": "Run",
-    "Python.pytorch_lightning_tune.executor": "Run",
-    "Python.pytorch_lightning_v3.executor": "Run",
-    "Python.reset.executor": "Run",
-    "Python.restore.executor": "Run",
-    "Python.restore_conda_environment.executor": "Run",
-    "Python.save.executor": "Run",
-    "Python.save_conda_environment.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/mnt/873a422e-1bf1-4c0b-b123-e47e6872b379/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.install.executor&quot;: &quot;Run&quot;,
+    &quot;Python.load_pytorch_lightning.executor&quot;: &quot;Run&quot;,
+    &quot;Python.monitoring.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pipeline.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prov.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prov_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.prov_3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pytorch_lightning_tune.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pytorch_lightning_v3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.reset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.restore.executor&quot;: &quot;Run&quot;,
+    &quot;Python.restore_conda_environment.executor&quot;: &quot;Run&quot;,
+    &quot;Python.save.executor&quot;: &quot;Run&quot;,
+    &quot;Python.save_conda_environment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/873a422e-1bf1-4c0b-b123-e47e6872b379/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/executables" />
@@ -377,7 +383,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720773076660</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add : Better graphics card management and performance optimization">
+      <option name="closed" value="true" />
+      <created>1721754556108</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1721754556109</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -392,16 +406,12 @@
     <MESSAGE value="Add : dense supervised model, supervised batch_size&#10;Mod : custom_scaling" />
     <MESSAGE value="Add : generation_observation_dataset.py and generation_projection_dataset.py" />
     <MESSAGE value="Add : monitoring&#10;Mod : minor fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add : monitoring&#10;Mod : minor fix" />
+    <MESSAGE value="Add : Better graphics card management and performance optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add : Better graphics card management and performance optimization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/environments/pong_survivor/render.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/temporaries/prov_3.py</url>
           <line>73</line>

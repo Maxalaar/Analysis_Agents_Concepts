@@ -6,7 +6,7 @@ from pytorch_lightning.callbacks import ModelCheckpoint, EarlyStopping
 from pytorch_lightning.callbacks import Timer
 
 from utilities.data import DataModule
-from utilities.lightning.module import Supervised
+from utilities.lightning.supervised import Supervised
 
 
 def train(

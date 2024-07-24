@@ -5,6 +5,7 @@ import ray
 from architectures.reinforcement.register_architectures import register_architectures
 from environments.register_environments import register_environments
 from modules.agent_training_by_reinforcement_learning import agent_training_by_reinforcement_learning
+from modules.generation_episode_videos import generation_episode_videos
 from modules.generation_observation_dataset import generation_observation_dataset
 from modules.generation_embeddings_dataset import generation_embeddings_dataset
 from modules.methods_concept_extraction.pca_extraction_concepts import pca_extraction_concepts
@@ -19,7 +20,7 @@ if __name__ == '__main__':
     register_environments()
 
     ray.init(local_mode=False)
-    experiment_name = 'debug_all'
+    experiment_name = 'debug_video_2'
     path_manager = PathManager(experiment_name)
 
     # Environment
@@ -34,7 +35,7 @@ if __name__ == '__main__':
         'layers_use_clustering': [False, False, True, False, False],
     }
     stopping_criterion = {
-        'time_total_s': 60 * 60 * 2,
+        'time_total_s': 60 * 1 * 1,
         'env_runners/episode_reward_mean': 0.80,
     }
     num_learners = 1
@@ -44,13 +45,13 @@ if __name__ == '__main__':
 
     # Generation dataset
     workers_number = 5
-    number_episodes_per_worker = 50
-    number_iterations = 50
+    number_episodes_per_worker = 1
+    number_iterations = 1
 
     # Supervised Learning
     supervised_learning_architecture = Dense
     accelerator = 'gpu'
-    max_time = timedelta(hours=2, minutes=0)
+    max_time = timedelta(hours=0, minutes=1)
     batch_size = 64*64*64*10
     number_worker_datamodule = 4
     check_val_every_n_epoch = 100
@@ -68,6 +69,12 @@ if __name__ == '__main__':
         num_env_runners=num_env_runners,
         evaluation_num_env_runners=evaluation_num_env_runners,
         evaluation_interval=evaluation_interval,
+    )
+
+    generation_episode_videos(
+        path_manager=path_manager,
+        workers_number=workers_number,
+        number_episodes_per_worker=2,
     )
 
     generation_observation_dataset(

@@ -1,6 +1,6 @@
 import os
 
-from utilities.lightning.module import Supervised
+from utilities.lightning.supervised import Supervised
 from utilities.path import find_latest_file
 
 

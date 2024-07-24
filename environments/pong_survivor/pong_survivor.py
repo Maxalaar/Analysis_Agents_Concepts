@@ -45,7 +45,7 @@ class PongSurvivor(gym.Env):
         self.action_space = gym.spaces.Discrete(3)
         self.observation_space = self._get_observation_space()
 
-        self.render_mode = environment_configuration.get('render_mode', None)
+        self.render_mode = environment_configuration.get('render_mode', 'rgb_array')
         self.render_environment = None
         self.display_arrows = environment_configuration.get('display_arrows', True)
         self.arrow_size = environment_configuration.get('display_arrows', 50)
@@ -84,9 +84,6 @@ class PongSurvivor(gym.Env):
 
             if self._current_time_steps > self.spec.max_episode_steps:
                 self.terminated = True
-
-            if self.render_mode is not None:
-                self.render()
 
         return self._get_observation(), 1.0 / (self.spec.max_episode_steps + 1), self.terminated, self.truncated, self._get_information()
 
