@@ -1,5 +1,4 @@
 import gymnasium
-import numpy as np
 import ray
 from ray.rllib.algorithms import AlgorithmConfig
 
@@ -32,7 +31,7 @@ class WorkerVideoEpisodeGeneration:
                 action, _, _ = self.policy.compute_single_action(observation, explore=True)
                 observation, reward, terminated, truncated, information = self.environment.step(action)
 
-            generate_video(renders, self.path_video + '_' + str(self.index) + '_' + str(index_episodes))
+            generate_video(renders, self.path_video + '/video_' + str(self.index) + '_' + str(index_episodes))
 
 
 def generation_episode_videos(

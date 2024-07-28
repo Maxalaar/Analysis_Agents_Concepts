@@ -9,6 +9,7 @@ def agent_training_by_reinforcement_learning(
     architecture_name,
     architecture_configuration,
     stopping_criterion,
+    train_batch_size=4000,
     num_learners=1,
     num_env_runners=5,
     evaluation_num_env_runners=1,
@@ -26,4 +27,5 @@ def agent_training_by_reinforcement_learning(
         num_env_runners=num_env_runners,
         evaluation_num_env_runners=evaluation_num_env_runners,
         evaluation_interval=evaluation_interval,
+        train_batch_size=train_batch_size,
     )

@@ -1,5 +1,6 @@
 from utilities.concept_extraction.generation_observations_based_concepts import generation_observations_based_concepts
-import utilities.lightning.learning
+from utilities.data import DataModule
+from utilities.lightning.supervised import Supervised
 from utilities.path import PathManager
 from utilities.concept_extraction.principal_component_analysis_embeddings import principal_component_analysis_embeddings
 
@@ -18,31 +19,39 @@ def pca_extraction_concepts(
     number_worker_datamodule=1,
     check_val_every_n_epoch=1,
 ):
+    model_name = 'pca_to_observations'
     if decomposition:
         principal_component_analysis_embeddings(
             path_manager=path_manager,
         )
 
     if learning:
-        utilities.lightning.learning.train(
-            model_name='pca_to_obs',
-            data_path=path_manager.embeddings_dataset,
-            architecture=architecture,
-            tensorboard_path=path_manager.lightning_tensorboard_directory,
-            model_path=path_manager.lightning_models_directory,
+        data = DataModule(
+            path=path_manager.embeddings_dataset,
             x_name='embeddings_principal_component_bases',
             y_name='observations',
-            accelerator=accelerator,
             batch_size=batch_size,
+            number_workers=number_worker_datamodule
+        )
+        pca_to_observations = Supervised(
+            name=model_name,
+            architecture=architecture,
+            input_shape=data.x_shape,
+            output_shape=data.y_shape,
+            save_path=path_manager.lightning_models_directory,
+            tensorboard_path=path_manager.lightning_tensorboard_directory,
+        )
+        pca_to_observations.learning(
+            data=data,
             max_time=max_time,
-            number_worker_datamodule=number_worker_datamodule,
             check_val_every_n_epoch=check_val_every_n_epoch,
+            accelerator=accelerator,
         )
 
     if generation:
         environment = environment_creator(environment_configuration)
         generation_observations_based_concepts(
             path_manager=path_manager,
-            model_name='pca_to_obs',
+            model_name=model_name,
             environment=environment,
         )

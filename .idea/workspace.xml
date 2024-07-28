@@ -4,22 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : Better graphics card management and performance optimization">
-      <change afterPath="$PROJECT_DIR$/modules/generation_episode_videos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/linear_perturbation_latent_space.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/lightning/perturbator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/video.py" afterDir="false" />
+    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : video.py">
+      <change afterPath="$PROJECT_DIR$/modules/concept_extraction/linear_perturbation_latent_space.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/concept_extraction/comparing_generations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/concept_extraction/variation_observation_according_concepts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/lightning/perturbation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conda/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/conda/install.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" beforeDir="false" afterPath="$PROJECT_DIR$/environments/pong_survivor/pong_survivor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/pong_survivor/render.py" beforeDir="false" afterPath="$PROJECT_DIR$/environments/pong_survivor/render.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/executables/monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/monitoring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/generation_observation_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_observation_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/methods_concept_extraction/svd_extraction_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/methods_concept_extraction/svd_extraction_concepts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/learning_concept_observation_correspondence.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/generation_episode_videos.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_episode_videos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/concept_extraction/pca_extraction_concepts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/methods_concept_extraction/svd_extraction_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/concept_extraction/svd_extraction_concepts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/generation_observations_based_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/generation_observations_based_concepts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/principal_component_analysis_embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/principal_component_analysis_embeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/singular_value_decomposition_embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/singular_value_decomposition_embeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/custom_scaling.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/custom_scaling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/lightning/learning.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/lightning/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/module.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/supervised_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/learning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/lightning/supervised.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -391,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721754556109</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add : video.py">
+      <option name="closed" value="true" />
+      <created>1721810212275</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1721810212275</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -407,7 +421,8 @@
     <MESSAGE value="Add : generation_observation_dataset.py and generation_projection_dataset.py" />
     <MESSAGE value="Add : monitoring&#10;Mod : minor fix" />
     <MESSAGE value="Add : Better graphics card management and performance optimization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add : Better graphics card management and performance optimization" />
+    <MESSAGE value="Add : video.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add : video.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -416,6 +431,11 @@
           <url>file://$PROJECT_DIR$/temporaries/prov_3.py</url>
           <line>73</line>
           <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utilities/concept_extraction/variation_observation_according_concepts.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

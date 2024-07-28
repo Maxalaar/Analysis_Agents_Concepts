@@ -24,7 +24,7 @@ class RenderEnvironment:
         self.window_size = (int(environment.play_area[0] * self.window_size_coefficient), int(environment.play_area[1] * self.window_size_coefficient))
 
         self.ball_size = int(2 * self.window_size_coefficient)
-        self.paddle_offset = 3
+        self.paddle_offset = 10
 
         self.human_render_is_init: bool = False
         self.window = None

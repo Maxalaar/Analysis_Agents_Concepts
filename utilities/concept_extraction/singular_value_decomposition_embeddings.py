@@ -1,7 +1,7 @@
 import h5py
 import dask.array as da
 
-from utilities.custom_scaling import custom_scaling
+from utilities.concept_extraction.custom_scaling import custom_scaling
 from utilities.path import PathManager
 
 

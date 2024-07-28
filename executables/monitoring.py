@@ -62,7 +62,7 @@ if __name__ == "__main__":
     time.sleep(5)
 
     # Monitoring simulation
-    webbrowser.open(list_to_url(list_simulation))
+    webbrowser.open_new(list_to_url(list_simulation))
 
     # Monitoring Ray Dashboard
     webbrowser.open('127.0.0.1:8265')

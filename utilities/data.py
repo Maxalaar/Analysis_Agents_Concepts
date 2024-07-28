@@ -39,26 +39,31 @@ def split_dataset(dataset, split_ratio=0.2):
 
 
 class H5Dataset(Dataset):
-    def __init__(self, path, input_key, output_key):
+    def __init__(self, path, input_key, output_key=None):
         self.path = path
         self.input_key = input_key
         self.output_key = output_key
-
-        with h5py.File(self.path, 'r') as file:
-            self.input = torch.tensor(file[self.input_key][:], dtype=torch.float32)
-            self.output = torch.tensor(file[self.output_key][:], dtype=torch.float32)
+        self.file = h5py.File(self.path, 'r')
+        self.input_data = self.file[self.input_key][:]
+        self.output_data = self.file[self.output_key][:] if self.output_key else None
 
     def __len__(self):
-        return len(self.input)
+        return len(self.input_data)
 
     def __getitem__(self, idx):
-        input = self.input[idx]
-        output = self.output[idx]
-        return input, output
+        input = torch.tensor(self.input_data[idx], dtype=torch.float32)
+        if self.output_data is None:
+            return input
+        else:
+            output = torch.tensor(self.output_data[idx], dtype=torch.float32)
+            return input, output
+
+    def __del__(self):
+        self.file.close()
 
 
 class DataModule(pl.LightningDataModule):
-    def __init__(self, path, x_name, y_name, batch_size=32, test_ratio=0.2, number_workers=1):
+    def __init__(self, path, x_name, y_name=None, batch_size=32, test_ratio=0.2, number_workers=1):
         super().__init__()
         self.path = path
         self.x_name = x_name
@@ -66,7 +71,10 @@ class DataModule(pl.LightningDataModule):
         self.number_workers = number_workers
 
         self.x_shape = get_h5_shapes(self.path, self.x_name)[1:]
-        self.y_shape = get_h5_shapes(self.path, self.y_name)[1:]
+        if self.y_name is None:
+            self.y_shape = None
+        else:
+            self.y_shape = get_h5_shapes(self.path, self.y_name)[1:]
 
         self.batch_size = batch_size
         self.test_ratio = test_ratio

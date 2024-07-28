@@ -3,7 +3,7 @@ import dask.array as da
 from dask_ml.decomposition import PCA
 from dask_ml.preprocessing import StandardScaler
 
-from utilities.custom_scaling import custom_scaling
+from utilities.concept_extraction.custom_scaling import custom_scaling
 from utilities.path import PathManager
 
 
