@@ -4,29 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : video.py">
-      <change afterPath="$PROJECT_DIR$/modules/concept_extraction/linear_perturbation_latent_space.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/concept_extraction/comparing_generations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/concept_extraction/variation_observation_according_concepts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utilities/lightning/perturbation.py" afterDir="false" />
+    <list default="true" id="3980a85b-0e1c-46e7-a6e0-c195d01e2c8e" name="Changes" comment="Add : perturbation learning, linear_perturbation_latent_space.py&#10;Mod : DataModule, minor modifications">
+      <change afterPath="$PROJECT_DIR$/architectures/reinforcement/variational_autoencoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/architectures/supervised/variational_autoencoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/pretraining_variational_autoencoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/information.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utilities/lightning/autoencoding.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conda/install.py" beforeDir="false" afterPath="$PROJECT_DIR$/conda/install.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environments/pong_survivor/render.py" beforeDir="false" afterPath="$PROJECT_DIR$/environments/pong_survivor/render.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executables/monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/monitoring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectures/reinforcement/dense.py" beforeDir="false" afterPath="$PROJECT_DIR$/architectures/reinforcement/dense.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectures/reinforcement/register_architectures.py" beforeDir="false" afterPath="$PROJECT_DIR$/architectures/register_architectures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/executables/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/executables/pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/agent_training_by_reinforcement_learning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/generation_episode_videos.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_episode_videos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/methods_concept_extraction/pca_extraction_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/concept_extraction/pca_extraction_concepts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/methods_concept_extraction/svd_extraction_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/concept_extraction/svd_extraction_concepts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/generation_observations_based_concepts.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/generation_observations_based_concepts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/principal_component_analysis_embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/principal_component_analysis_embeddings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/singular_value_decomposition_embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/singular_value_decomposition_embeddings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/custom_scaling.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/custom_scaling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/learning.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/lightning/supervised.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/lightning/supervised.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/path.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/generation_observation_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generation_observation_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/concept_extraction/comparing_generations.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/concept_extraction/comparing_generations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/ray/reinforcement_learning.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,24 +75,24 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/873a422e-1bf1-4c0b-b123-e47e6872b379/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/873a422e-1bf1-4c0b-b123-e47e6872b379/Programming_Projects/Pycharm_Projects/Analysis_Agents_Concepts/architectures/supervised&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/architectures/supervised" />
       <recent name="$PROJECT_DIR$/executables" />
       <recent name="$PROJECT_DIR$/architectures/reinforcement" />
       <recent name="$PROJECT_DIR$/utilities" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/experimentations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/architectures" />
       <recent name="$PROJECT_DIR$/utilities/concept_extraction" />
       <recent name="$PROJECT_DIR$/temporaries" />
       <recent name="$PROJECT_DIR$/experiments/debug_3/datasets" />
       <recent name="$PROJECT_DIR$/utilities/ray" />
-      <recent name="$PROJECT_DIR$/utilities" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pipeline">
@@ -259,12 +251,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.reset" />
       <item itemvalue="Python.install" />
-      <item itemvalue="Python.prov" />
-      <item itemvalue="Python.restore" />
       <item itemvalue="Python.monitoring" />
       <item itemvalue="Python.pipeline" />
+      <item itemvalue="Python.prov" />
+      <item itemvalue="Python.reset" />
+      <item itemvalue="Python.restore" />
       <item itemvalue="Python.save" />
     </list>
     <recent_temporary>
@@ -405,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721810212275</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add : perturbation learning, linear_perturbation_latent_space.py&#10;Mod : DataModule, minor modifications">
+      <option name="closed" value="true" />
+      <created>1722195595363</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1722195595363</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -422,7 +422,8 @@
     <MESSAGE value="Add : monitoring&#10;Mod : minor fix" />
     <MESSAGE value="Add : Better graphics card management and performance optimization" />
     <MESSAGE value="Add : video.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add : video.py" />
+    <MESSAGE value="Add : perturbation learning, linear_perturbation_latent_space.py&#10;Mod : DataModule, minor modifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add : perturbation learning, linear_perturbation_latent_space.py&#10;Mod : DataModule, minor modifications" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -436,6 +437,16 @@
           <url>file://$PROJECT_DIR$/utilities/concept_extraction/variation_observation_according_concepts.py</url>
           <line>44</line>
           <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/miniconda3/envs/Analysis_Agents_Concepts/lib/python3.11/site-packages/ray/rllib/policy/torch_policy_v2.py</url>
+          <line>262</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/utilities/data.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

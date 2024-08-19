@@ -49,8 +49,9 @@ def generation_observation_dataset(
     algorithm = restore_best_algorithm(path_manager.rllib_trial_path)
     configuration = algorithm.config.copy(copy_frozen=False)
     del algorithm
-    configuration.learners(num_learners=0)
-    configuration.env_runners(num_env_runners=0)
+    configuration.resources(num_gpus=0)
+    configuration.learners(num_learners=0, num_gpus_per_learner=0)
+    configuration.env_runners(num_env_runners=0, num_gpus_per_env_runner=0)
 
     workers = [WorkerObservationGeneration.remote(path_checkpoint, configuration) for _ in range(workers_number)]
 

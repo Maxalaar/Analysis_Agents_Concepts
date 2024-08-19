@@ -3,6 +3,7 @@ import os
 from ray import air, tune
 from ray.rllib.algorithms import AlgorithmConfig
 from ray.rllib.algorithms.ppo import PPOConfig, PPO
+from ray.rllib.algorithms.dqn import DQNConfig, DQN
 
 
 def train(
@@ -30,14 +31,25 @@ def train(
         PPOConfig()
         .environment(env=environment_name, env_config=environment_configuration)
         .framework('torch')
+        .resources(
+            num_gpus=1,
+        )
         .training(
             model={
                 'custom_model': architecture_name,
-                'custom_model_config': architecture_configuration
+                'custom_model_config': architecture_configuration,
             },
-            train_batch_size=train_batch_size,
+            train_batch_size=4000 * 3,
+            mini_batch_size_per_learner=128 * 2,    # 128 * 2
+            sgd_minibatch_size=128 * 2,
+            num_sgd_iter=30 * 4,
+            # lr=1e-8,
         )
         .env_runners(
+            batch_mode='complete_episodes',
+            # exploration_config={
+            #     'type': 'StochasticSampling',
+            # },
             num_env_runners=num_env_runners,
             num_envs_per_env_runner=num_envs_per_env_runner,
             num_cpus_per_env_runner=num_cpus_per_env_runner,
@@ -52,6 +64,7 @@ def train(
             evaluation_interval=evaluation_interval,
             evaluation_num_env_runners=evaluation_num_env_runners,
             evaluation_duration=evaluation_duration,
+            evaluation_parallel_to_training=True,
         )
     )
 

@@ -18,7 +18,7 @@ class Dense(TorchModelV2, nn.Module):
         self.latent_space = None
 
         observation_size = get_preprocessor(observation_space)(observation_space).size
-        action_size = get_preprocessor(action_space)(action_space).size
+        action_size = num_outputs   # get_preprocessor(action_space)(action_space).size
 
         actor_layers = [nn.Linear(observation_size, self.configuration_hidden_layers[0]), nn.ReLU()]
         critic_layers = [nn.Linear(observation_size, self.configuration_hidden_layers[0]), nn.ReLU()]
@@ -49,8 +49,8 @@ class Dense(TorchModelV2, nn.Module):
         return action, []
 
     def value_function(self):
-        value_function = self.critic_layers(self.flatten_observation)
-        return torch.reshape(value_function, [-1])
+        value = self.critic_layers(self.flatten_observation)
+        return torch.reshape(value, [-1])
 
     def hook(self, module, input, output):
         if not isinstance(module, nn.Linear):

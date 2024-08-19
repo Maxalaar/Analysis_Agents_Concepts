@@ -22,7 +22,10 @@ def comparing_generations(
 
     with torch.no_grad():
         y_hat = model(x.to(model.device))
-        y_hat = y_hat.to('cpu')
+        if type(y_hat) is not tuple:
+            y_hat = y_hat.to('cpu')
+        else:
+            y_hat = y_hat[0].to('cpu')
 
     y = y.numpy()
     y_hat = y_hat.numpy()
