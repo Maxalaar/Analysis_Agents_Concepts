@@ -31,19 +31,19 @@ def train(
         PPOConfig()
         .environment(env=environment_name, env_config=environment_configuration)
         .framework('torch')
-        .resources(
-            num_gpus=1,
-        )
+        # .resources(
+        #     num_gpus=0,
+        # )
         .training(
             model={
                 'custom_model': architecture_name,
                 'custom_model_config': architecture_configuration,
             },
-            train_batch_size=4000 * 3,
-            mini_batch_size_per_learner=128 * 2,    # 128 * 2
-            sgd_minibatch_size=128 * 2,
-            num_sgd_iter=30 * 4,
-            # lr=1e-8,
+            train_batch_size=4000 * 2,
+            # mini_batch_size_per_learner=4000 * 5,    # 128 * 2
+            # sgd_minibatch_size=4000 * 5,
+            # num_sgd_iter=30 * 4,
+            # lr=1e-5,
         )
         .env_runners(
             batch_mode='complete_episodes',

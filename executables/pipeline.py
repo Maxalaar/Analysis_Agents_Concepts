@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     ray.init(local_mode=False)
     information()
-    experiment_name = 'variational_autoencoder_6'   # 'variational_autoencoder' or 'dense'
+    experiment_name = 'gaussian_normalization_autoencoder_0.001_unlimited'   # 'variational_autoencoder' or 'dense'
     path_manager = PathManager(experiment_name)
 
     # Environment
@@ -33,20 +33,20 @@ if __name__ == '__main__':
     environment_configuration = environment_configurations.classic_one_ball
 
     # Reinforcement Learning
-    reinforcement_learning_architecture_name = 'variational_autoencoder'  # 'variational_autoencoder' or 'dense'
+    reinforcement_learning_architecture_name = 'gaussian_normalization_autoencoder'  # 'gaussian_normalization_autoencoder', 'variational_autoencoder' or 'dense'
     reinforcement_learning_architecture_configuration = {
         'configuration_hidden_layers': [128, 64, 32, 64, 128],
         'layers_use_clustering': [False, False, True, False, False],
     }
     stopping_criterion = {
-        'time_total_s': 60 * 20 * 1,  # 20 minutes
-        'env_runners/episode_reward_mean': 0.85,
+        # 'time_total_s': 60 * 60 * 1,  # 20 minutes
+        # 'env_runners/episode_reward_mean': 0.85,
     }
     train_batch_size = 4000 * 1
     num_learners = 1
-    num_cpus_per_learner = 1
-    num_gpus_per_learner = 2
-    num_env_runners = 5
+    num_cpus_per_learner = 3
+    num_gpus_per_learner = 0
+    num_env_runners = 12
     evaluation_num_env_runners = 1
     evaluation_interval = 10
 
@@ -86,11 +86,11 @@ if __name__ == '__main__':
         evaluation_interval=evaluation_interval,
     )
 
-    # generation_episode_videos(
-    #     path_manager=path_manager,
-    #     workers_number=workers_number,
-    #     number_episodes_per_worker=2,
-    # )
+    generation_episode_videos(
+        path_manager=path_manager,
+        workers_number=workers_number,
+        number_episodes_per_worker=2,
+    )
     #
     # generation_observation_dataset(
     #     path_manager=path_manager,

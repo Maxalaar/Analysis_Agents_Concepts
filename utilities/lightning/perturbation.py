@@ -8,7 +8,7 @@ from pytorch_lightning.loggers import TensorBoardLogger
 from pytorch_lightning.callbacks import ModelCheckpoint, EarlyStopping
 from pytorch_lightning.callbacks import Timer
 from datetime import timedelta
-from geomloss import SamplesLoss
+# from geomloss import SamplesLoss
 
 
 class Perturbation(pl.LightningModule):
