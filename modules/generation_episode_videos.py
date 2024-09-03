@@ -38,9 +38,10 @@ def generation_episode_videos(
         path_manager: PathManager,
         workers_number,
         number_episodes_per_worker,
+        trainable='PPO'
 ):
-    path_checkpoint = path_best_checkpoints(path_manager.rllib_trial_path)
-    algorithm = restore_best_algorithm(path_manager.rllib_trial_path)
+    path_checkpoint = path_best_checkpoints(path_manager.rllib_trial_path, trainable=trainable)
+    algorithm = restore_best_algorithm(path_manager.rllib_trial_path, trainable=trainable)
     configuration = algorithm.config.copy(copy_frozen=False)
     del algorithm
     configuration.resources(num_gpus=0)

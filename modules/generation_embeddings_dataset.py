@@ -31,19 +31,30 @@ class WorkerProjectionGeneration:
 
 def generation_embeddings_dataset(
         path_manager: PathManager,
-        workers_number,
+        workers_number = 1,
+        dataset_size = None,
+        trainable='PPO',
 ):
-    path_checkpoint = path_best_checkpoints(path_manager.rllib_trial_path)
-    algorithm = restore_best_algorithm(path_manager.rllib_trial_path)
+    path_checkpoint = path_best_checkpoints(path_manager.rllib_trial_path, trainable=trainable)
+    algorithm = restore_best_algorithm(path_manager.rllib_trial_path, trainable=trainable)
     configuration = algorithm.config.copy(copy_frozen=False)
     del algorithm
-    configuration.learners(num_learners=0)
+    configuration.resources(
+        num_gpus=0,
+    )
+    configuration.learners(
+        num_learners=0,
+        num_gpus_per_learner=0,
+    )
     configuration.env_runners(num_env_runners=0)
 
     workers = [WorkerProjectionGeneration.remote(path_checkpoint, configuration) for _ in range(workers_number)]
 
     with h5py.File(path_manager.observations_dataset, 'r') as file:
-        observations = file['observations']
+        if dataset_size is None:
+            observations = file['observations'][:]
+        else:
+            observations = file['observations'][:dataset_size]
         observations = np.array_split(observations, workers_number)
 
         ray.get([worker.projections.remote(observations[index]) for index, worker in enumerate(workers)])

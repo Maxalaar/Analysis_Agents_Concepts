@@ -1,24 +1,21 @@
 import os
 
 import torch
+import torch.distributions as distributions
 from utilities.data import DataModule, H5Dataset
 from utilities.image import save
 from utilities.path import PathManager
 import numpy as np
 
 
-def comparing_generations(
+def generation_observations(
     path_manager: PathManager,
-    data_path,
-    x_name,
-    y_name,
     sample_size,
     model,
     environment,
 ):
-    data = H5Dataset(path_manager.embeddings_dataset, x_name, y_name)
-    random_indices = np.sort(np.random.choice(len(data), sample_size, replace=True))
-    x, y = data[random_indices]
+    gaussian_distribution = distributions.MultivariateNormal(torch.zeros(model.model.input_dimension), torch.eye(model.model.input_dimension[0]))
+    x = gaussian_distribution.sample((sample_size,))
 
     with torch.no_grad():
         y_hat = model(x.to(model.device))
@@ -27,20 +24,14 @@ def comparing_generations(
         else:
             y_hat = y_hat[0].to('cpu')
 
-    y = y.numpy()
     y_hat = y_hat.numpy()
 
     for i in range(sample_size):
-        environment.set_from_observation(y[i])
-        representation = environment.render()
         environment.set_from_observation(y_hat[i])
         representation_generation = environment.render()
 
-        comparison = np.concatenate((representation, representation_generation), axis=1)
-
         save(
-            image=comparison,
-            directory=os.path.join(path_manager.comparisons_directory, str(model.name)),
+            image=representation_generation,
+            directory=os.path.join(path_manager.generations_directory, str(model.name)),
             name=str(i) + '.png',
         )
-

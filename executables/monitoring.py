@@ -41,6 +41,8 @@ if __name__ == "__main__":
         'ray/tune/info/learner/default_policy/learner_stats/policy_loss',
         'ray/tune/info/learner/default_policy/learner_stats/vf_loss',
         'ray/tune/info/learner/default_policy/learner_stats/entropy',
+        'ray/tune/info/learner/default_policy/model/kullback_leibler_loss',
+        'ray/tune/info/learner/default_policy/model/policy_loss',
     ]
 
     list_simulation = [
@@ -52,23 +54,35 @@ if __name__ == "__main__":
         'ray/tune/perf/ram_util_percent',
     ]
 
-    list_lightning = [
-        'lightning/-train_loss',
-        'lightning/-validation_loss',
+    list_supervised = [
+        'supervised/-train_loss',
+        'supervised/-validation_loss',
+    ]
+
+    list_perturbation = [
+        'perturbation/-train_loss',
+        'perturbation/-train_loss_classification',
+        'perturbation/-train_loss_regression',
+        'perturbation/-validation_loss',
+        'perturbation/-validation_loss_classification',
+        'perturbation/-validation_loss_regression',
     ]
 
     process: Process = Process(target=run_tensorboard)
     process.start()
     time.sleep(5)
 
-    # Monitoring simulation
-    webbrowser.open_new(list_to_url(list_simulation))
-
     # Monitoring Ray Dashboard
-    webbrowser.open('127.0.0.1:8265')
+    webbrowser.open_new('127.0.0.1:8265')
 
-    # Monitoring of lightning
-    webbrowser.open(list_to_url(list_lightning))
+    # Monitoring simulation
+    webbrowser.open(list_to_url(list_simulation))
 
     # Monitoring of learning
     webbrowser.open(list_to_url(list_learning))
+
+    # Monitoring of supervised
+    webbrowser.open(list_to_url(list_supervised))
+
+    # Monitoring of perturbation
+    webbrowser.open(list_to_url(list_perturbation))

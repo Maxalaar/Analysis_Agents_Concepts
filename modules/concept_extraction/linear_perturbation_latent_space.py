@@ -1,6 +1,7 @@
 from datetime import timedelta
 
 from utilities.concept_extraction.comparing_generations import comparing_generations
+from utilities.concept_extraction.generation_observations import generation_observations
 from utilities.concept_extraction.variation_observation_according_concepts import variation_observation_according_concepts
 from utilities.data import DataModule
 from utilities.lightning.perturbation import Perturbation
@@ -43,6 +44,8 @@ def linear_perturbation_latent_space(
         check_val_every_n_epoch=check_val_every_n_epoch,
         accelerator=accelerator,
     )
+    del data_embeddings_to_observations
+
     comparing_generations(
         path_manager=path_manager,
         data_path=path_manager.embeddings_dataset,
@@ -52,7 +55,13 @@ def linear_perturbation_latent_space(
         sample_size=1000,
         environment=environment_creator(environment_configuration),
     )
-    del data_embeddings_to_observations
+
+    generation_observations(
+        path_manager=path_manager,
+        model=load(model_directory=path_manager.lightning_models_directory + '/' + str('embeddings_to_observations'), learning_type=Supervised),
+        sample_size=1000,
+        environment=environment_creator(environment_configuration),
+    )
 
     embeddings_to_observations = load(
         model_directory=path_manager.lightning_models_directory + '/' + str('embeddings_to_observations'),
@@ -61,7 +70,7 @@ def linear_perturbation_latent_space(
     data_perturbator = DataModule(
         path=path_manager.embeddings_dataset,
         x_name='embeddings',
-        batch_size=64*2*2*2*2,
+        batch_size=16_384,
         number_workers=number_worker_datamodule
     )
     perturbation = Perturbation(
@@ -74,10 +83,12 @@ def linear_perturbation_latent_space(
         perturbation_magnitude=perturbation_magnitude,
         save_path=path_manager.lightning_models_directory,
         tensorboard_path=path_manager.lightning_tensorboard_directory,
+        layer_configuration=[1024, 512, 256, 128, 64],
     )
     perturbation.learning(
         data=data_perturbator,
-        max_time=timedelta(hours=0, minutes=1),    # 30 minutes
+        max_time=timedelta(days=7, hours=0, minutes=0),
+        patience=10e10,
         check_val_every_n_epoch=check_val_every_n_epoch,
         accelerator=accelerator,
     )

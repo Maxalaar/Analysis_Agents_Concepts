@@ -18,7 +18,7 @@ def variation_observation_according_concepts(
     perturbator_name,
     generator_name,
     environment,
-    number_elements_per_observation=10,
+    number_elements_per_observation=100,
     number_observations_per_concept=10,
 ):
     data = H5Dataset(data_path, x_name)

@@ -23,6 +23,7 @@ class Perturbation(pl.LightningModule):
         perturbation_magnitude,
         save_path=None,
         tensorboard_path=None,
+        layer_configuration=[256, 256, 256],
     ):
         super(Perturbation, self).__init__()
         self.name = name
@@ -30,7 +31,7 @@ class Perturbation(pl.LightningModule):
         self.tensorboard_path = tensorboard_path
 
         self.perturbations_number = perturbations_number
-        self.model = architecture(torch.prod(torch.tensor(observation_shape)).item() * 2, (self.perturbations_number+1,))
+        self.model = architecture(torch.prod(torch.tensor(observation_shape)).item() * 2, (self.perturbations_number+1,), layer_configuration=layer_configuration)
         self.perturbations_matrix = nn.Parameter(torch.randn(perturbations_number, *embedding_shape))
 
         self.criterion_classification = nn.CrossEntropyLoss()
